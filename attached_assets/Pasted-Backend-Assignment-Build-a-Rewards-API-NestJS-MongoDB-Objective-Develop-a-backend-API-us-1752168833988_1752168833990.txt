@@ -1,0 +1,134 @@
+Backend Assignment: Build a Rewards API (NestJS + MongoDB)
+
+Objective:
+
+Develop a backend API using NestJS and MongoDB to support a rewards dashboard. The API will handle user rewards, transactions, and redemption functionality.
+
+Features to Implement:
+
+1. User Management (No Authentication):
+
+Mock user data instead of implementing authentication.
+
+Assume users are identified by a userId passed in the API requests. 
+
+2. Rewards Management:
+
+Endpoints:
+
+GET/rewards/points: Fetch the total reward points for a user.
+
+GET/rewards/transactions: Fetch the last five transactions that earned reward points (supports pagination).
+
+POST/rewards/redeem: Redeem reward points for a specific option (e.g.,
+
+cashback, vouchers).
+
+GET/rewards/options: Fetch available reward options.
+
+Logic: 
+
+Validate that the user has enough points for redemption.
+
+Deduct points from the user's account upon successful redemption.
+
+3. Database Design (MongoDB Collections):
+
+Users Collection:
+
+Mocked for this task, assume user data is static or seeded.
+
+Fields: _id, name, email. 
+
+Rewards Collection:
+
+Fields: id, userId, totalPoints, updatedAt.
+Transactions Collection:
+
+Fields: id, userId, amount, category, pointsEarned, timestamp.
+
+Redemptions Collection:
+
+Fields:_id, userId, pointsRedeemed, rewardType, timestamp.
+
+4. Data Validation:
+
+Use class-validator to validate incoming request data.
+
+Ensure proper error handling and validation logic for endpoints.
+
+5. Error Handling:
+
+Standardized error responses with meaningful messages and status codes.
+
+Handle common scenarios like insufficient points or invalid user IDs.
+
+6. Swagger/OpenAPI/Postman Documentation:
+
+Document all endpoints with detailed request and response structures.
+
+Provide examples of request bodies and responses.
+
+7. Testing:
+
+Write unit tests for services and controllers using Jest.
+
+Test redemption logic for edge cases (e.g., insufficient points).
+
+Technical Requirements:
+
+Framework: NestJS (latest version).
+
+Database: MongoDB with Mongoose for schema modeling.
+
+Documentation: Swagger/OpenAPI/Postman for all endpoints.
+
+Testing: Use Jest for unit testing.
+
+Bonus Features:
+Add a GET /analytics/rewards-distribution endpoint that aggregates reward categories.
+
+Implement WebSocket support for real-time updates on reward points.
+
+Introduce caching (e.g., using Redis) for frequently accessed data like reward options.
+
+valuation Criteria:
+
+1. Code Quality:
+
+Modular architecture with reusable services and controllers.
+
+Clean and maintainable code following NestJS conventions.
+
+2. Functionality:
+
+All endpoints work as specified.
+
+Proper validation and error handling.
+
+3. Documentation:
+
+Clear and complete Swagger documentation.
+
+README file with setup instructions and architectural explanations.
+
+4. Scalability:
+
+Efficient MongoDB queries using indexes where appropriate.
+
+Proper schema design and data relationships.
+
+Submission Instructions:
+1. Share the repository (GitHub, GitLab, or Bitbucket).
+
+2. Include a README file with:
+
+Setup instructions.
+
+Example API requests and responses.
+
+Any additional considerations or features.
+
+3. Notes:
+
+a. We want you to use Al and complete assignment with rapid development, but we look forward to check how honestly you accept how much Al you used to complete the task soon and how skilled you're to customize it. ("Remeber we're experts to catch if you know code or not, so thinking to fool us is itself a time wasting and ban for life from re-applying practice.) 
